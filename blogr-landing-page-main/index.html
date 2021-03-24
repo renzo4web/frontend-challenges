@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -19,14 +21,14 @@
 
 <body>
   <header>
-    <img class="logo" src="./images/logo.svg" >
     <img class="icon-hamburger" src="./images/icon-hamburger.svg" id="icon-hamburger">
+    <img class="logo" src="./images/logo.svg">
     <nav class="nav__mobile flex-wrapper">
       <ul class="header-list">
 
-        <li>Product</li>
+        <li>product</li>
 
-        <ul class="product__ul">
+        <ul class="navs product__ul">
           <li>Overview</li>
           <li>Pricing</li>
           <li>Marketplace</li>
@@ -34,17 +36,17 @@
           <li>Integrations</li>
         </ul>
 
-        <li>Company</li>
-        <ul class="company__ul">
+        <li>company</li>
+        <ul class="navs company__ul">
           <li>About</li>
           <li>Team</li>
           <li>Blog</li>
           <li>Careers</li>
         </ul>
 
-        <li>Connect</li>
+        <li>connect</li>
 
-        <ul class="contact__ul">
+        <ul class="navs connect__ul">
           <li>Contact</li>
           <li>Newsletter</li>
           <li>LinkedIn</li>
@@ -52,36 +54,80 @@
 
       </ul>
       <ul class="login">
-        <li>Login</li>
-        <li>Sign Up</li>
+        <li class="btn">Login</li>
+        <li class="btn sign-up">Sign Up</li>
       </ul>
     </nav>
+
+    <nav class="nav__desktop flex-wrapper">
+      <ul class="header-list">
+
+        <li>product</li>
+
+        <ul class="navs product__ul">
+          <li>Overview</li>
+          <li>Pricing</li>
+          <li>Marketplace</li>
+          <li>Features</li>
+          <li>Integrations</li>
+        </ul>
+
+        <li>company</li>
+        <ul class="navs company__ul">
+          <li>About</li>
+          <li>Team</li>
+          <li>Blog</li>
+          <li>Careers</li>
+        </ul>
+
+        <li>connect</li>
+
+        <ul class="navs connect__ul">
+          <li>Contact</li>
+          <li>Newsletter</li>
+          <li>LinkedIn</li>
+        </ul>
+
+      </ul>
+      <ul class="login">
+        <li class="btn">Login</li>
+        <li class="btn sign-up">Sign Up</li>
+      </ul>
+    </nav>
+
+
+
     <h1>A modern publishing platform</h1>
     <h2>Grow your audience and build your online brand</h2>
     <div class="container-btns">
       <button class="btn btn-start">Start for Free</button>
       <button class="btn">Learn More</button>
-
     </div>
 
   </header>
+  <h3 class="main-title">Designed for the future</h3>
   <main class="flex-wrapper">
 
     <section class="main__section">
-      <h3 class="main__titles">Designed for the future</h3>
+
+      <div class="section-article">
       <img class="main__imgs" src="./images/illustration-editor-mobile.svg" alt="mobile illustration">
+      
+      <div class="section__content">
+        <h3 class="main__titles">Introducing an extensible editor</h3>
+        <p> Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+          The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+          videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+          change the looks of a blog.</p>
 
-      <h3 class="main__titles">Introducing an extensible editor</h3>
-      <p> Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
-        The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
-        videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
-        change the looks of a blog.</p>
 
-
-      <h3 class="main__titles">Robust content management</h3>
-      <p>
-        Flexible content management enables users to easily move through posts. Increase the usability of your blog
-        by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
+        <h3 class="main__titles">Robust content management</h3>
+        <p>
+          Flexible content management enables users to easily move through posts. Increase the usability of your blog
+          by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+        </p>
+      </div>
+    </div>
     </section>
 
     <section class="main__section">
@@ -109,7 +155,7 @@
     </section>
   </main>
   <footer class="flex-wrapper">
-    <img class="footer__logo" src="./images/logo.svg" >
+    <img class="footer__logo" src="./images/logo.svg">
     <ul class="footer__ul">
       <li>Product</li>
       <ul class="footer__ul--lists">
