@@ -370,6 +370,28 @@ footer li {
     right: -25px;
   }
 
+  .nav__desktop .navs{
+    position: absolute;
+    width: 10%;
+  }
+  .navs.product__ul{
+    top: 90px;
+    left: 85px;
+  }
+
+  .navs.company__ul{
+    top: 90px;
+    left: 230px;
+  }
+
+
+  
+  .navs.connect__ul{
+    top: 90px;
+    left: 375px;
+  }
+
+
   .nav__desktop .login {
     margin: 0;
     border: none;

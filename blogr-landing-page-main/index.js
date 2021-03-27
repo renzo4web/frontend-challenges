@@ -11,8 +11,7 @@ const handleClickHambumger = () => {
     : './images/icon-hamburger.svg';
 };
 
-const hideList = (clicked,parent,lis) => {
-  console.log('yy');
+const hideList = (clicked, parent, lis) => {
   lis.forEach((li, j) => {
     if (clicked === li) {
       li.classList.toggle('show');
@@ -24,7 +23,9 @@ const hideList = (clicked,parent,lis) => {
         }
       }
     } else {
-      parent[j].classList.add('hidden');
+      if (li.classList.contains('nav__mobile')) {
+        parent[j].classList.add('hidden');
+      }
       li.classList.remove('show');
     }
   });
@@ -38,7 +39,7 @@ if (iconHamburguer.style.display !== 'none') {
       const currentList = document.querySelector(
         `.navs.${e.target.textContent}__ul`
       );
-      hideList(currentList,navListParent,list);
+      hideList(currentList, navListParent, list);
       if (Array.from(list).every((li) => !li.classList.contains('show'))) {
         navListParent.forEach((li) => li.classList.remove('hidden'));
       }
@@ -46,22 +47,33 @@ if (iconHamburguer.style.display !== 'none') {
   });
 }
 
-  /*  Desktop Nav */
-  const navDesktop = document.querySelector('.nav__desktop');
-  const navListParentDestop = document.querySelectorAll(
-    '.nav__desktop .header-list > li'
-  );
-  const listDestop = document.querySelectorAll('.nav__desktop .navs');
-  navListParentDestop.forEach((heading) => {
-    heading.addEventListener('mouseover', (e) => {
-      const currentList = document.querySelector(
-        `.nav__desktop .navs.${e.target.textContent}__ul`
-      );
-      console.log(e.target);
-      hideList(currentList,navListParentDestop,listDestop);
-      if (Array.from(listDestop).every((li) => !li.classList.contains('show'))) {
-        navListParent.forEach((li) => li.classList.remove('hidden'));
-      }
-    });
-  });
+/*  Desktop Nav */
+const navDesktop = document.querySelector('.nav__desktop');
+const navListParentDestop = document.querySelectorAll(
+  '.nav__desktop .header-list > li'
+);
+const listDestop = document.querySelectorAll('.nav__desktop .navs');
 
+const handler = (event) => {
+  const currHover = document.querySelector(
+    `.nav__desktop .navs.${event.target.textContent}__ul`
+  );
+
+  listDestop.forEach((list) => list.classList.remove('show'));
+
+  if (event.type == 'mouseover') {
+    currHover.classList.toggle('show');
+  }
+};
+
+const handlerOut = (event) => {
+  listDestop.forEach((list) => list.classList.remove('show'));
+};
+
+navListParentDestop.forEach((heading) => {
+  heading.addEventListener('mouseover', handler);
+});
+
+listDestop.forEach((heading) => {
+  heading.addEventListener('mouseleave', handlerOut);
+});
