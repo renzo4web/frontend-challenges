@@ -11,20 +11,20 @@ const handleClickHambumger = () => {
     : './images/icon-hamburger.svg';
 };
 
-const hideList = (clicked, parent, lis) => {
-  lis.forEach((li, j) => {
+const hideList = (clicked) => {
+  list.forEach((li, j) => {
     if (clicked === li) {
       li.classList.toggle('show');
-      console.log(parent[j + 1]);
-      parent[j].classList.remove('hidden');
+      console.log(navListParent[j + 1]);
+      navListParent[j].classList.remove('hidden');
       if (j > 0) {
         for (let i = j; i >= 0; i--) {
-          parent[i].classList.remove('hidden');
+          navListParent[i].classList.remove('hidden');
         }
       }
     } else {
       if (li.classList.contains('nav__mobile')) {
-        parent[j].classList.add('hidden');
+        navListParent[j].classList.add('hidden');
       }
       li.classList.remove('show');
     }
@@ -39,7 +39,7 @@ if (iconHamburguer.style.display !== 'none') {
       const currentList = document.querySelector(
         `.navs.${e.target.textContent}__ul`
       );
-      hideList(currentList, navListParent, list);
+      hideList(currentList);
       if (Array.from(list).every((li) => !li.classList.contains('show'))) {
         navListParent.forEach((li) => li.classList.remove('hidden'));
       }
@@ -50,7 +50,7 @@ if (iconHamburguer.style.display !== 'none') {
 /*  Desktop Nav */
 const navDesktop = document.querySelector('.nav__desktop');
 const navListParentDestop = document.querySelectorAll(
-  '.nav__desktop .header-list > li'
+  '.nav__desktop .nav-heading'
 );
 const listDestop = document.querySelectorAll('.nav__desktop .navs');
 
@@ -60,14 +60,22 @@ const handler = (event) => {
   );
 
   listDestop.forEach((list) => list.classList.remove('show'));
+  navListParentDestop.forEach((list) => list.classList.remove('relative'));
+
+  const parentLi = event.target.closest('li')
+
+  parentLi.classList.add('relative')
 
   if (event.type == 'mouseover') {
     currHover.classList.toggle('show');
   }
+
+
 };
 
 const handlerOut = (event) => {
   listDestop.forEach((list) => list.classList.remove('show'));
+  navListParentDestop.forEach((list) => list.classList.remove('relative'));
 };
 
 navListParentDestop.forEach((heading) => {
