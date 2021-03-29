@@ -23,9 +23,7 @@ const hideList = (clicked) => {
         }
       }
     } else {
-      if (li.classList.contains('nav__mobile')) {
-        navListParent[j].classList.add('hidden');
-      }
+      navListParent[j].classList.add('hidden');
       li.classList.remove('show');
     }
   });
@@ -62,15 +60,13 @@ const handler = (event) => {
   listDestop.forEach((list) => list.classList.remove('show'));
   navListParentDestop.forEach((list) => list.classList.remove('relative'));
 
-  const parentLi = event.target.closest('li')
+  const parentLi = event.target.closest('li');
 
-  parentLi.classList.add('relative')
+  parentLi.classList.add('relative');
 
   if (event.type == 'mouseover') {
     currHover.classList.toggle('show');
   }
-
-
 };
 
 const handlerOut = (event) => {
