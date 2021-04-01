@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [code](https://github.com/soyrenzo/FrontendMentor-Challenges/tree/main/blogr-landing-page-main)
+- Live Site URL: [live](https://codepen.io/soyrenzo/full/OJWRbwG)
 
 ## My process
 

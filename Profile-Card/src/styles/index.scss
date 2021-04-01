@@ -1,0 +1,154 @@
+$body-color: slateblue;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Primary */
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-blue: hsl(229, 23%, 23%);
+$very-grayish-blue: hsl(227, 10%, 46%);
+
+/* Neutral */
+$dark-gray: hsl(0, 0%, 59%);
+
+body {
+  color: $body-color;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  background-color: $dark-cyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 50%;
+  height: 300px;
+  background-size: 500px;
+  z-index: -1;
+}
+
+.circle-top {
+  background-image: url("../assets/images/bg-pattern-top.svg");
+  background-position: right bottom;
+  top: 0;
+  left: 0;
+}
+
+.circle-bottom {
+  background-image: url("../assets/images/bg-pattern-bottom.svg");
+  background-position: left top;
+  right: 0;
+  bottom: 0;
+}
+
+/* Card */
+
+.container-card {
+  width: 85%;
+  height: 45%;
+  background-color: #fff;
+  border-radius: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: 0 15px 30px $very-dark-blue;
+}
+
+.card-top {
+  background-image: url("../assets/images/bg-pattern-card.svg");
+  background-size: 80%;
+  background-position: center;
+  height: 50%;
+  width: 150%;
+}
+
+.card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 4px solid #fff;
+  position: absolute;
+  top: -20%;
+}
+
+.card-text {
+  color: #000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.description h1 {
+  display: inline;
+  font-size: 1.5rem;
+  margin-right: 0.5em;
+}
+
+.description {
+  text-align: center;
+  padding-top: 4.5em;
+}
+
+.description span {
+  font-size: 1.5rem;
+  color: $very-grayish-blue;
+}
+
+.description p {
+  margin: 1em 0;
+  color: $very-grayish-blue;
+}
+
+.stats-container {
+  width: 100%;
+  padding: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $dark-gray;
+}
+
+.stat span {
+  display: block;
+}
+
+.stat span:first-child {
+  font-weight: 700;
+}
+
+.stat span:last-child {
+  margin-top: 0.5em;
+  color: $very-grayish-blue;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+/*  Desktop  */
+@media (min-width: 380px) {
+  .container-card {
+    max-width: 385px;
+  }
+}
