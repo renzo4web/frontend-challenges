@@ -22,10 +22,12 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
   background: linear-gradient(180deg, hsl(273, 75%, 66%) 0%, hsl(240, 73%, 65%) 100%);
   height: 100vh;
+  width: 100vw;
   padding: 3.5em 2em 3em 2em;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 main {
@@ -84,7 +86,7 @@ main .container-questions h1 {
 }
 
 .question::after {
-  content: url("../assets/images/icon-arrow-down.svg");
+  content: url('../assets/images/icon-arrow-down.svg');
   position: absolute;
   right: 13px;
   top: 20px;
@@ -124,6 +126,10 @@ img.shadow {
   color: $very-dark-desaturated-blue;
 }
 
+img.box {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -134,11 +140,21 @@ img.shadow {
   }
 }
 
-@media (min-width: 650px) {
-  body {
-    //padding: 20em 5em;
+@keyframes boxMove {
+  from {
+    margin-top: 12vh;
   }
 
+  50% {
+    margin-top: 7vh;
+  }
+
+  to {
+    margin-top: 12vh;
+  }
+}
+
+@media (min-width: 650px) {
   main {
     flex-direction: row;
     justify-content: space-between;
@@ -150,7 +166,7 @@ img.shadow {
   }
 
   .container-questions {
-    width: 50%;
+    width: 55%;
     padding: 0;
   }
 
@@ -170,10 +186,11 @@ img.shadow {
   }
 
   img.illustration-container {
-    content: url("../assets/images/illustration-woman-online-desktop.svg");
+    content: url('../assets/images/illustration-woman-online-desktop.svg');
+    width: 30%;
     margin: 0;
-    top: 50px;
-    left: -50px;
+    margin-top: 16%;
+    margin-left: -36%;
   }
 
   .images {
@@ -182,15 +199,24 @@ img.shadow {
     justify-content: center;
     //position: relative;
   }
+  img.box {
+    position: absolute;
+    display: block;
+    overflow: visible;
+    z-index: 2;
+    margin-top: 12vh;
+    margin-left: -81vw;
+    height: 25%;
+  }
 
-  img.illustration-container,
-  img.shadow {
-    width: 40%;
+  img.box.move {
+    animation: boxMove 1s  infinite;
   }
 
   .images img.shadow {
-    position: absolute;
-    top: 180px;
-    left: -50px;
+    content: url('../assets/images/bg-pattern-desktop.svg');
+    width: 40%;
+    margin-top: 16%;
+    margin-left: -36%;
   }
 }

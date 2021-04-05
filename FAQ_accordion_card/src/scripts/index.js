@@ -5,16 +5,17 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const btns = document.querySelectorAll('.question');
-// const responses = document.querySelectorAll('.response');
+const imgBox = document.querySelector('.box');
 
-btns.forEach((question, i) => {
+btns.forEach((question) => {
   question.addEventListener('click', (e) => {
     if (question.classList.contains('show')) {
       question.classList.remove('show');
+      imgBox.classList.remove('move');
       return;
     }
-    console.log(question);
-    btns.forEach(res => res.classList.remove('show'));
+    btns.forEach((res) => res.classList.remove('show'));
     question.classList.add('show');
+    imgBox.classList.toggle('move');
   });
 });
