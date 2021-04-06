@@ -16,6 +16,6 @@ btns.forEach((question) => {
     }
     btns.forEach((res) => res.classList.remove('show'));
     question.classList.add('show');
-    imgBox.classList.toggle('move');
+    imgBox.classList.add('move');
   });
 });

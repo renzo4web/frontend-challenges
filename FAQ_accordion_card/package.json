@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@beyonk/google-fonts-webpack-plugin": "^1.5.0",
     "core-js": "^3.8.1"
   }
 }
