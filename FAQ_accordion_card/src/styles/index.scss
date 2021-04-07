@@ -164,7 +164,7 @@ img.box {
     flex-direction: row;
     justify-content: flex-end;
     padding: 4em 4em 4em 0;
-    width: 80vw;
+    width: 60vw;
     height: 90%;
     max-height: 500px;
     overflow: hidden;
@@ -195,8 +195,8 @@ img.box {
     width: 40%;
     max-width: 800px;
     margin: 0;
-    margin-top: 27vh;
-    margin-left: -22vw;
+    margin-top: 30vh;
+    margin-left: -15vw;
   }
 
   img.box {
@@ -205,7 +205,7 @@ img.box {
     overflow: visible;
     z-index: 2;
     margin-top: 12vh;
-    margin-left: -81vw;
+    margin-left: -60vw;
     height: 20%;
   }
 
@@ -218,7 +218,7 @@ img.box {
     content: url('../assets/images/bg-pattern-desktop.svg');
     width: 40%;
     max-width: 1000px;
-    margin-top: 8%;
+    margin-top: 20%;
     margin-left: -31%;
   }
 }
