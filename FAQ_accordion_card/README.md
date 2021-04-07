@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://res.cloudinary.com/turbopila/image/upload/v1617803242/2021-04-07-10-46-faq-accordion-renzo.vercel.app_xukysb.png)
 
 ### Links
 
