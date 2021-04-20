@@ -1,0 +1,114 @@
+$body-color: slateblue;
+
+@import 'typography';
+@import 'pallete';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #efefef;
+}
+
+.card {
+  position: relative;
+  margin: 1em;
+  background-color: $dark-desaturated-blue;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  overflow: hidden;
+
+  .card__img {
+    background-image: url('../public/image-header-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: $accent;
+    background-blend-mode: multiply;
+    flex-basis: 300px;
+    min-width: 100%;
+  }
+
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 2em;
+  }
+
+  .card__title {
+    text-align: center;
+  }
+
+  .card__text {
+    margin: 1em 0;
+    margin-bottom: 0;
+    max-width: 63ch;
+  }
+
+  .card__stats {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card__stat {
+    margin-top: 1em;
+    display: inline-flex;
+    flex-direction: column;
+
+    span {
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .card {
+    flex-direction: row-reverse;
+    max-width: 1000px;
+    width: 90%;
+
+    .card__img {
+      background-image: url('../public/image-header-desktop.jpg');
+      min-width: 0;
+      height: 100%;
+      flex-basis: 45%;
+    }
+
+    .card__content {
+      align-items: flex-start;
+      flex-grow: 1;
+    }
+
+    .card__text,
+    .card__title {
+      text-align: left;
+      max-width: 60ch;
+    }
+
+    .card__stats {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+
+      .card__stat {
+        margin-top: 3em;
+        font-size: 1.2rem;
+        align-items: flex-start;
+      }
+    }
+  }
+}
