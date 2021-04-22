@@ -17,6 +17,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #efefef;
+  min-width: 100%;
 }
 
 .card {
@@ -32,11 +33,11 @@ body {
 
   .card__img {
     background-image: url('../public/image-header-mobile.jpg');
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-color: $accent;
     background-blend-mode: multiply;
-    flex-basis: 300px;
+    height: 350px;
     min-width: 100%;
   }
 
@@ -84,11 +85,9 @@ body {
 
     .card__img {
       background-image: url(../public/image-header-desktop.jpg);
-      background-position: left;
       min-width: 0;
       min-height: 0;
-      height: 100%;
-      flex-basis: 45%;
+      width: 400px;
     }
 
     .card__content {
