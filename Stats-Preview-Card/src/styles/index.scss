@@ -80,17 +80,19 @@ body {
     flex-direction: row-reverse;
     max-width: 1000px;
     width: 90%;
+    overflow: auto;
 
     .card__img {
-      background-image: url('../public/image-header-desktop.jpg');
+      background-image: url(../public/image-header-desktop.jpg);
+      background-position: left;
       min-width: 0;
+      min-height: 0;
       height: 100%;
       flex-basis: 45%;
     }
 
     .card__content {
       align-items: flex-start;
-      flex-grow: 1;
     }
 
     .card__text,
