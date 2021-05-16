@@ -110,6 +110,12 @@ body {
 }
 
 @media (min-width: 900px) {
+  body {
+    content: '';
+    background-image: url('../public/bg-pattern-bottom-desktop.svg'), url('../public/bg-pattern-top-desktop.svg');
+    background-size: cover;
+  }
+
   .wrapper {
     max-width: 1000px;
     display: grid;
@@ -137,6 +143,7 @@ body {
     h5:nth-child(2) {
       margin-left: 2em;
     }
+
     h5:nth-child(3) {
       margin-left: 4em;
     }
@@ -146,7 +153,7 @@ body {
     // display: grid;
     grid-area: cards;
     flex-direction: row;
-    margin-top: 3em;
+    margin-top: 1em;
     // grid-template-columns: repeat(3, 1fr);
 
     .card {

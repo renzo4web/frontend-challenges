@@ -1,33 +1,34 @@
-# Webpack Frontend Starterkit
+# Frontend Mentor - Social proof section
 
-[![Dependabot badge](https://flat.badgen.net/dependabot/wbkd/webpack-starter?icon=dependabot)](https://dependabot.com/)
+### Brief
 
-A lightweight foundation for your next webpack based frontend project.
+Your challenge is to build out this social proof section and get it looking as close to the design as possible.
 
-### Installation
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-```
-npm install
-```
+Your users should be able to:
 
-### Start Dev Server
+View the optimal layout for the site depending on their device's screen size
 
-```
-npm start
-```
+### Screenshot
 
-### Build Prod Version
+![](https://res.cloudinary.com/turbopila/image/upload/v1621179362/Screenshot_1_dtl84k.png)
 
-```
-npm run build
-```
+### Links
 
-### Features:
+- Live Site URL: [click](https://social-proof-section-renzo4web.netlify.app/)
 
-- ES6 Support via [babel](https://babeljs.io/) (v7)
-- JavaScript Linting via [eslint-loader](https://github.com/MoOx/eslint-loader)
-- SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
-- Autoprefixing of browserspecific CSS rules via [postcss](https://postcss.org/) and [autoprefixer](https://github.com/postcss/autoprefixer)
-- Style Linting via [stylelint](https://stylelint.io/)
+## My process
 
-When you run `npm run build` we use the [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to move the css to a separate file. The css file gets included in the head of the `index.html`.
+I started with the mobile layout first liike always, my purpuse with this project was to conoslidate the knowledge of grid and flexbox.
+
+### Built with
+
+- Semantic HTML5 markup
+- Sass
+- Flexbox
+
+## Author
+
+- Frontend Mentor - [@w3renzo](https://www.frontendmentor.io/profile/w3renzo)
+- Twitter - [@soyrenz0](https://www.twitter.com/renzo4web)
