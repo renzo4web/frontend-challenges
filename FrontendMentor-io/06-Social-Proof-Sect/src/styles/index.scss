@@ -138,6 +138,10 @@ body {
     h5 {
       flex-direction: row;
       align-items: center;
+      background-color: $light-grayish-magenta;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 0 0.3em;
     }
 
     h5:nth-child(2) {
@@ -150,11 +154,9 @@ body {
   }
 
   .proof__cards {
-    // display: grid;
     grid-area: cards;
     flex-direction: row;
     margin-top: 1em;
-    // grid-template-columns: repeat(3, 1fr);
 
     .card {
       margin-right: 1em;
