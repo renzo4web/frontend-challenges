@@ -1,0 +1,64 @@
+// *-----------------------*\
+//  $CARD
+// *-----------------------*\
+
+.card {
+  box-shadow: $bs;
+  padding: 2em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+
+  .card__title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .card__text {
+    color: $color-grayish-secondary;
+    font-weight: $fw-light;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .card__icon {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    width: 64px;
+    height: 64px;
+    margin-left: auto;
+  }
+}
+
+.card:nth-child(1) {
+  border-top: 0.3em solid $cyan;
+
+  .card__icon {
+    background-image: url('../public/icon-supervisor.svg');
+  }
+}
+
+.card:nth-child(2) {
+  border-top: 0.3em solid $red;
+
+  .card__icon {
+    background-image: url('../public/icon-team-builder.svg');
+  }
+}
+
+.card:nth-child(3) {
+  border-top: 0.3em solid $orange;
+
+  .card__icon {
+    background-image: url('../public/icon-karma.svg');
+  }
+}
+
+.card:nth-child(4) {
+  border-top: 0.3em solid $blue;
+
+  .card__icon {
+    background-image: url('../public/icon-calculator.svg');
+  }
+}

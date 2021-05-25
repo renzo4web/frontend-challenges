@@ -1,0 +1,41 @@
+// *-----------------------*\
+//  $HEADING
+// *-----------------------*\
+
+header {
+  text-align: center;
+
+  .header__subtitle {
+    font-weight: $fw-light;
+    font-size: 1.5rem;
+    color: $color-grayish-secondary;
+    margin-bottom: 10px;
+  }
+
+  .header__title {
+    font-size: 1.5rem;
+    color: $color-dark-primary;
+    font-weight: $fw-bold;
+    margin-bottom: 15px;
+  }
+
+  .header__text {
+    line-height: 1.5;
+    font-weight: $fw-light;
+    color: $color-grayish-secondary;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 700px) {
+  header {
+    .header__title,
+    .header__subtitle {
+      font-size: 2.2rem;
+    }
+
+    .header__text {
+      max-width: 65ch;
+    }
+  }
+}

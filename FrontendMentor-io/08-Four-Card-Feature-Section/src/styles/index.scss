@@ -1,0 +1,17 @@
+@import '_reset';
+@import '_variables';
+
+body {
+  background-color: $color-white;
+  font-family: $ff-primary;
+  padding: 2em 1em;
+  font-size: $fs-body;
+  overflow-x: hidden;
+}
+
+@import '_heading';
+@import '_card';
+
+// MOBILE FIRST
+
+@import '_layout';
