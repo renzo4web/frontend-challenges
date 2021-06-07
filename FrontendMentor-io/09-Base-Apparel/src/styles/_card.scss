@@ -1,0 +1,155 @@
+$desktop: 700px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $gradient;
+  height: 100%;
+
+  #{&}__logo {
+    max-width: 125px;
+    margin: 1.5em 1.5em;
+    align-self: flex-start;
+  }
+
+  #{&}__img {
+    width: 100%;
+    max-height: 350px;
+    max-width: 600px;
+    object-fit: cover;
+  }
+
+  #{&}__title {
+    // font-size: 3rem;
+    @include font-size(5rem);
+
+    font-weight: map-get($ff-weight, bold);
+    color: $clr-neutral;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin: 1.3em 0;
+    margin-bottom: 0;
+
+    span {
+      display: block;
+      color: map-get($clr-primary, desaturated-red);
+      font-weight: map-get($ff-weight, light);
+    }
+  }
+
+  #{&}__content {
+    color: map-get($clr-primary, desaturated-red);
+    opacity: 0.8;
+    text-align: center;
+    width: 90%;
+    line-height: 1.5;
+    margin: 2rem 0;
+  }
+
+  .card__form {
+    margin-top: 1em;
+    text-align: center;
+    width: 80%;
+    position: relative;
+
+    input {
+      padding: 1em 1.5em;
+      width: 100%;
+      border-radius: 25px;
+      color: map-get($clr-primary, desaturated-red);
+      border: 1px solid map-get($clr-primary, desaturated-red);
+      background-color: transparent;
+
+      &::placeholder {
+        color: map-get($clr-primary, desaturated-red);
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: hsl(0, 74%, 74%);
+      padding: 1em 1.5em;
+      border-radius: 25px;
+      box-shadow: 10px 5px 25px map-get($clr-primary, desaturated-red);
+
+      img {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  @include desktop {
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: grid;
+    text-align: left;
+    grid-template-columns: minmax(50px, 100px) 1fr max-content;
+    grid-template-areas:
+      '. logo  img'
+      '. title  img'
+      '. content  img'
+      '. form  img';
+    column-gap: 1em;
+
+    #{&}__img {
+      grid-area: img;
+      content: url('../public/hero-desktop.jpg');
+      object-position: top;
+      max-height: 100vh;
+      background-position: center;
+      width: 100%;
+      max-width: 600px;
+      height: 100%;
+      grid-row: 1 / -1;
+    }
+
+    #{&}__logo {
+      text-align: left;
+      grid-area: logo;
+      margin: 0;
+      margin-top: 3em;
+      margin-bottom: 0;
+    }
+
+    #{&}__title {
+      grid-area: title;
+      margin: 0;
+      text-align: left;
+      max-width: 400px;
+      //   font-size: 5rem;
+    }
+
+    #{&}__content {
+      grid-area: content;
+      margin: 0;
+      margin-bottom: 0;
+      text-align: left;
+      justify-self: start;
+      align-self: start;
+      font-size: 1.2rem;
+      max-width: 65ch;
+    }
+
+    .card__form {
+      grid-area: form;
+      margin: 0;
+      margin-bottom: auto;
+      text-align: left;
+      font-size: 1rem;
+      max-width: 65ch;
+    }
+  }
+}
