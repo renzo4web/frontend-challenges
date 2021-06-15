@@ -1,3 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+.header {
+  width: 100%;
+  text-align: center;
+
+  .header__title {
+    @include font-size(3rem);
+  }
+
+  .header__description {
+    line-height: 1.6;
+  }
+  @include for-desktop-up {
+    text-align: left;
+    margin: auto;
+  }
+}

@@ -1,0 +1,76 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+
+  .badge {
+    width: 100%;
+    background-color: $accent-blue;
+    text-align: center;
+    padding: 1em 3em;
+    border-radius: 0.6em;
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.3);
+    margin: 1em;
+  }
+
+  &.error .badge {
+    margin-bottom: 8em;
+  }
+  @include for-phone-only {
+    &.error .badge {
+      margin-bottom: 5em;
+    }
+  }
+  @include for-tablet-portrait-up {
+    &.error .badge {
+      margin-bottom: 5em;
+    }
+  }
+
+  .form__alert {
+    position: absolute;
+    opacity: 0;
+    font-size: 1.7rem;
+    top: 0;
+    color: rgb(255, 255, 30);
+    text-align: center;
+    font-weight: $fw-bold;
+    margin: 0;
+    transform: translateY(2em);
+    transition: all 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &.error .form__alert {
+    opacity: 1;
+    transform: translateY(3.5em);
+  }
+
+  .form {
+    color: $dark-grey;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-radius: 10px;
+    width: 100%;
+
+    .error-message {
+      color: $red;
+    }
+
+    small {
+      margin-top: 1em;
+      text-align: center;
+      color: $mid-grey;
+      line-height: 1.7;
+
+      a {
+        font-weight: $fw-semi-bold;
+        color: $red;
+      }
+    }
+  }
+}

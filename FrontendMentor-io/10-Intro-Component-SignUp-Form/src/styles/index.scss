@@ -1,13 +1,8 @@
 @charset "UTF-8";
-
-// rfs Responsive Font Size
 @import '~rfs/scss';
-
-// 3. Base stuff
-@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
-
-// 4. Layout-related sections
-@import 'layout/header', 'layout/footer';
-
-// 5. Components
-@import 'components/button';
+@import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
+@import 'vendors/normalize';
+@import 'base/base', 'base/typography', 'base/helpers';
+@import 'layout/header', 'layout/footer', 'layout/main';
+@import 'components/form', 'components/background', 'components/button',
+  'components/labels-for-placeholders';

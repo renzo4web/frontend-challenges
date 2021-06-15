@@ -1,0 +1,90 @@
+@keyframes errorShake {
+  //   from {
+  //     opacity: 0;
+  //   }
+
+  //   to {
+  //     border: 1.4px solid $red;
+  //     opacity: 1;
+  //   }
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.form-group {
+  position: relative;
+  margin: 1em 0;
+
+  input {
+    display: block;
+    margin: 0;
+    width: 100%;
+    font-weight: $fw-semi-bold;
+    opacity: 0.8;
+    padding: 1em;
+    border: 1px solid $clr-neutral-grayish-blue;
+    border-radius: 5px;
+  }
+
+  input.error {
+    animation: errorShake 1s infinite;
+    border: 1.4px solid $red;
+    color: $red;
+    position: relative;
+    background-image: url(../../public/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position-x: 94%;
+    background-position-y: center;
+  }
+
+  input:focus {
+    color: $accent-blue;
+  }
+
+  label {
+    color: $mid-grey;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 1em;
+    left: 0;
+    right: 0;
+    font-weight: $fw-semi-bold;
+    transition: transform 250ms ease;
+    user-select: none;
+    z-index: -1;
+  }
+
+  input:placeholder-shown + label {
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  input:not(:placeholder-shown) + label,
+  input:focus:not(:placeholder-shown) + label {
+    visibility: visible;
+    z-index: 1;
+    opacity: 0.8;
+    transform: translate(0.5em, -2.5em);
+    animation: unset;
+  }
+}
