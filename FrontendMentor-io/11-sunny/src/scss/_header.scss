@@ -1,0 +1,55 @@
+@keyframes arrowDown {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+header {
+  background-image: url("../resources/mobile/image-header.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: $clr-white;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1em;
+
+    strong {
+      font-weight: $fw-semi-bold;
+    }
+  }
+  h1 {
+    font-family: $ff-title;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: $fw-bold;
+  }
+  .header_arrow {
+    animation: arrowDown 4s infinite;
+    margin-bottom: 2em;
+  }
+
+  @media (min-width: 850px) {
+    & {
+      background-image: url("../resources/desktop/image-header.jpg");
+    }
+  }
+}

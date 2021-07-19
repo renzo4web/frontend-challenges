@@ -1,0 +1,52 @@
+.testimonials {
+  padding: 3em 1em;
+  width: 90%;
+  h3 {
+    color: $clr-grayish-blue;
+    font-size: 1rem;
+    font-family: $ff-title;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  figure {
+    text-align: center;
+    padding: 0;
+    margin: 2em 0;
+    color: $clr-very-dark-grayish-blue;
+    img {
+      border-radius: 50%;
+    }
+
+    blockquote {
+      line-height: 1.5;
+      font-size: 1rem;
+      color: $clr-dark-grayish-blue;
+    }
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      cite {
+        font-family: $ff-title;
+        font-style: normal;
+      }
+      cite.company {
+        margin-top: 10px;
+        color: $clr-grayish-blue;
+        font-size: 0.8rem;
+        font-family: inherit;
+      }
+    }
+  }
+
+  @media (min-width: 850px) {
+    & {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      h3 {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}

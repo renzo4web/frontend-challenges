@@ -1,0 +1,52 @@
+// =========================================
+//  Master
+// =========================================
+
+// Imports ------------------------------- /
+@import "variables";
+@import "reset", "header", "navbar", "main", "footer", "middle", "testimonials",
+  "gallery";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: $ff-text;
+  font-size: 18px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #f5c3fc;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+}
+.container {
+  background-color: rgba(185, 193, 66, 0.25);
+  border: 2px dashed rgba(185, 193, 66, 0.25);
+  margin: 0 7%;
+  height: 100%;
+}
+
+// Media Queries ------------------------- /
+@media only screen and (max-width: 400px) {
+  // Medium: width is below 990px pixels
+}

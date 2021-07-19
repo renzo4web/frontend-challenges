@@ -1,0 +1,8 @@
+{
+  "transforms": {
+    "*.html": [
+      "parcel-transformer-google-fonts"
+    ]
+  }
+}
+

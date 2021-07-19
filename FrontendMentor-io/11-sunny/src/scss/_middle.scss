@@ -1,0 +1,131 @@
+.grid-col-2 {
+  grid-template-columns: 1fr;
+  grid-template-areas: "img1" "text2" "img2" "text1" "graphic" "photograpy";
+
+  .text1 {
+    grid-area: text1;
+  }
+
+  .text2 {
+    grid-area: text2;
+  }
+  .box-img,
+  .box-photograpy,
+  .box-graphic {
+    width: 100%;
+    height: calc(0.664 * 100vw);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .box,
+  .box-graphic,
+  .box-photograpy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 1em;
+    h3,
+    h4 {
+      font-family: $ff-title;
+      font-weight: $fw-bold;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    p {
+      color: $clr-dark-grayish-blue;
+      line-height: 1.5;
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 2em 0;
+      max-width: 50ch;
+    }
+    a {
+      color: #000;
+      text-decoration: none;
+      font-family: $ff-title;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      &:after {
+        z-index: 0;
+        content: "";
+        position: absolute;
+        opacity: 0.4;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 7px;
+        border-radius: 5px;
+        background-color: $clr-soft-red;
+      }
+    }
+  }
+
+  .img-1 {
+    grid-area: img1;
+    background-image: url("../resources/mobile/image-transform.jpg");
+  }
+  .img-2 {
+    grid-area: img2;
+    background-image: url("../resources/mobile/image-stand-out.jpg");
+  }
+
+  .box-photograpy,
+  .box-graphic {
+    height: 35rem;
+    justify-content: flex-end;
+    padding: 0em 1.5em;
+    h4 {
+      color: $clr-dark-desaturated-cyan;
+    }
+    p {
+      color: $clr-dark-blue;
+    }
+  }
+  .box-graphic {
+    grid-area: graphic;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../resources/mobile/image-graphic-design.jpg");
+  }
+  .box-photograpy {
+    grid-area: photograpy;
+    background-image: url("../resources/mobile/image-photography.jpg");
+  }
+  @media (min-width: 850px) {
+    & {
+      font-size: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "text1 img1"
+        "img2 text2"
+        "photograpy graphic";
+    }
+
+    .box-img,
+    .box-photograpy,
+    .box-graphic {
+      height: 50vh;
+      width: 100%;
+    }
+
+    .img-1 {
+      background-image: url("../resources/desktop/image-transform.jpg");
+    }
+    .img-2 {
+      background-image: url("../resources/desktop/image-stand-out.jpg");
+    }
+
+    .box.box-graphic {
+      padding-bottom: 0;
+      background-image: url("../resources/desktop/image-graphic-design.jpg");
+    }
+    .box.box-photograpy {
+      padding-bottom: 0;
+      background-image: url("../resources/desktop/image-photography.jpg");
+    }
+  }
+}

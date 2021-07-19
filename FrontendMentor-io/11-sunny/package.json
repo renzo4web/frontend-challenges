@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "rimraf dist/production/ && parcel build src/index.html -d dist/production/ --global index --no-source-maps --public-url .",
+    "dev": "parcel src/index.html -d dist/development/ --global index --open",
+    "package:delete": "rimraf node_modules/ && rimraf package-lock.json",
+    "package:install": "npm install",
+    "package:update": "npx npm-check-updates -u && npm install",
+    "start": "npm run dev"
+  },
+  "parcel": {
+    "transforms": {
+      "*.html": [
+        "parcel-transformer-google-fonts"
+      ]
+    }
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-inliner": "^1.0.14",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.9"
+  }
+}
