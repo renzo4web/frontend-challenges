@@ -1,0 +1,197 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+
+  /*PRIMARY*/
+  --clr-primary : hsl(172,67%,45%);
+  /*NEUTRAL*/
+  --dark-cyan : hsl(185,14%,43%);
+--dark-grayish-cyan: hsl(186, 14%, 43%);
+--dark-grayish-cyan2: hsl(184, 14%, 56%);
+--light-grayish-cyan: hsl(185, 41%, 84%);
+--light-grayish-cyan2: hsl(189, 41%, 97%);
+--white: hsl(0, 0%, 100%);
+--dark-green : #00494D;
+
+
+/*FORM INPUTS SIZE*/
+
+--fs-inputs : 24px;
+--fw-reg : 400;
+--fw-bold : 700;
+}
+
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--light-grayish-cyan) ;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  font-size:var(--fs-inputs);
+  outline: none;
+  border :none;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer ;
+    -webkit-appearance: none;
+  margin: 0;
+
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+}
+
+.btn:hover{
+  background-color: var(--clr-primary);
+  color: var(--dark-cyan) ;
+}
+
+
+
+/*STYLE RADIO INPUTS LIKE BUTTONS*/
+
+.radio-input {
+  display: inline-block;
+}
+
+.radio-input input[type=radio]{
+  display: none;
+}
+
+.radio-input label {
+  font-size:var(--fs-inputs);
+  font-weight: var(--fw-bold);
+  display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border-right: none;
+	user-select: none;
+  background-color: var(--dark-green);
+  color: var(--white);
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.radio-input labe:active{
+  transform: scale(0.98);
+}
+.radio-input:first-child label {
+	border-radius: 6px 0 0 6px;
+}
+
+.radio-input:last-child label {
+	border-radius: 0 6px 6px 0;
+	border-right: 1px solid #999;
+}
+
+
+/* Checked */
+.radio-input .input-selected {
+  background-color: var(--clr-primary);
+}
+ 
+/* Hover */
+.radio-input label:hover {
+  background-color:var(--clr-primary);
+	color: var(--dark-green);
+  transform: scale(1.1);
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus{
+    outline : 2px solid var(--clr-primary);
+}
+
+.calculator {
+  margin: 0 auto;
+  width: 90%;
+  background-color: var(--white);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+}
+
+.results {
+  width: 90%;
+  background-color: var(--dark-green);
+  border-radius: 25px;
+  padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.result-value{
+  width: 100%;
+  display:grid;
+  font-weight: var(--fw-bold);
+  font-size: 1.2rem;
+  grid-template-areas: 
+  "text value "
+  "sub  value";
+}
+
+.result-value .text {
+  color: var(--white);
+  grid-area: text;
+}
+
+.result-value .sub {
+  color:var(--dark-grayish-cyan);
+  grid-area: sub;
+}
+
+.result-value .value {
+  color: var(--clr-primary);
+  font-size: var(--fs-inputs);
+  grid-area: value;
+}
+
+.btn-reset {
+  cursor: pointer;
+  background-color: var(--clr-primary);
+  border: none;
+  color: var(--dark-green);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  font-weight: var(--fw-bold);
+  margin-top: auto;
+width: 90%;
+padding: 10px 0;
+}
+
+.btn-reset:hover{
+  background-color: var(--light-grayish-cyan);
+}
