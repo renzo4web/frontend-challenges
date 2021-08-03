@@ -14,6 +14,8 @@ const appReducer = (state, action) => {
         tipAmount: action.tipAmount,
         total: action.total,
       };
+    case "RESET":
+      return action.state;
     default:
       return state;
   }

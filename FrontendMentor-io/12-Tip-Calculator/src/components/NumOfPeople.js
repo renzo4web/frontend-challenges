@@ -1,10 +1,12 @@
 import React from "react";
 // eslint-disable-next-line import/no-unresolved
-import people from "url:../resources/icon-person.svg";
+import personIcon from "url:../resources/icon-person.svg";
 import { useAppState } from "../App";
+import InputText from "./InputText";
 
 const NumOfPeople = () => {
   const [state, dispatch] = useAppState();
+  const hasError = !state.people && state.bill > 0;
 
   const handleChange = ({ target }) => {
     dispatch({
@@ -15,18 +17,14 @@ const NumOfPeople = () => {
 
   return (
     <div>
-      <label htmlFor="people">Number of People</label>
-      <div>
-        <img src={people} alt="number of people" />
-        <input
-          type="number"
-          name="people"
-          id="people"
-          value={state.people}
-          onChange={handleChange}
-          onBlur={handleChange}
-        />
-      </div>
+      <InputText
+        icon={personIcon}
+        value={state.people}
+        hasError={hasError}
+        className="input-grey"
+        id="Number of people"
+        onChange={handleChange}
+      />
     </div>
   );
 };

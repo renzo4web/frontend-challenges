@@ -2,6 +2,7 @@ import React from "react";
 // eslint-disable-next-line import/no-unresolved
 import iconDollar from "url:../resources/icon-dollar.svg";
 import { useAppState } from "../App";
+import InputText from "./InputText";
 
 const Bill = () => {
   const [state, dispatch] = useAppState();
@@ -10,29 +11,18 @@ const Bill = () => {
 
   return (
     <div>
-      <label htmlFor="bill">Bill</label>
-      <div>
-        <img src={iconDollar} alt="bill" />
-        <input
-          className=""
-          type="number"
-          id="bill"
-          name="bill"
-          value={bill}
-          onChange={({ target }) => {
-            dispatch({
-              type: "INPUT_BILL",
-              bill: target.value,
-            });
-          }}
-          onBlur={({ target }) => {
-            dispatch({
-              type: "INPUT_BILL",
-              bill: target.value,
-            });
-          }}
-        />
-      </div>
+      <InputText
+        className="input-grey"
+        icon={iconDollar}
+        value={bill}
+        id="Bill"
+        onChange={({ target }) =>
+          dispatch({
+            type: "INPUT_BILL",
+            bill: target.value,
+          })
+        }
+      />
     </div>
   );
 };

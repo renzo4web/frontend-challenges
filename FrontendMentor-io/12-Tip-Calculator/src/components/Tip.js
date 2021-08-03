@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAppState } from "../App";
+import ButtonRadio from "./ButtonRadio";
 
 const Tip = () => {
   const [showCustom, setShowCustom] = useState(false);
@@ -7,6 +8,7 @@ const Tip = () => {
   const tips = [5, 10, 15, 25, 50];
 
   const handleInputRadio = ({ target }) => {
+    setShowCustom(false);
     dispatch({
       type: "INPUT_TIP",
       tip: target.value,
@@ -15,43 +17,40 @@ const Tip = () => {
 
   const handleCustom = ({ target }) => {
     setShowCustom(true);
+    console.log(target.value);
     dispatch({
       type: "INPUT_TIP",
       tip: target.value,
     });
   };
 
-  console.log("render radios");
   return (
-    <div>
+    <div className="tip-container">
       <label htmlFor="tip">Select Tip</label>
-      {tips.map((tip) => (
-        <div className="radio-input" key={tip}>
-          <label
-            className={
-              Number(state.tip) === tip && !showCustom ? "input-selected" : ""
-            }
-            htmlFor={`%${tip}`}
-          >
-            %{tip}
-          </label>
-          <input
-            type="radio"
-            id={`%${tip}`}
-            value={tip}
-            checked={Number(state.tip) === tip}
+      <div className="radio-container">
+        {tips.map((tip) => (
+          <ButtonRadio
+            tip={tip}
+            value={state}
+            key={tip}
+            key_id={tip}
+            showCustom={showCustom}
             onChange={handleInputRadio}
           />
-        </div>
-      ))}
-      <label htmlFor="custom-tip">Custom</label>
-      <input
-        value={showCustom && state.tip}
-        onChange={handleCustom}
-        type="number"
-        name="tip"
-        id="custom-tip"
-      />
+        ))}
+        <label className="hide-element" htmlFor="custom-tip">
+          Custom
+        </label>
+        <input
+          className="custom-input"
+          value={showCustom && state.tip}
+          onChange={handleCustom}
+          placeholder="Custom"
+          type="number"
+          name="tip"
+          id="custom-tip"
+        />
+      </div>
     </div>
   );
 };

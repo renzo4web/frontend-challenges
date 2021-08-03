@@ -7,5 +7,6 @@
       }
     ],
      "@babel/preset-env"
-  ]
+  ],
+   "plugins": ["transform-remove-console"]
 }

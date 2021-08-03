@@ -1,8 +1,8 @@
 export const calculateTip = (bill = 0, tip = 0, people = 0) => {
   if (!bill || !tip || !people) {
     return {
-      personTotal: "",
-      tipAmountPerson: "",
+      personTotal: "00.0",
+      tipAmountPerson: "00.0",
     };
   }
 

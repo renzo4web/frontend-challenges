@@ -37,7 +37,7 @@ const App = () => {
     <Context.Provider value={value}>
       <main className="calculator">
         <Form />
-        <Results tip={tipAmount} total={total} />
+        <Results tip={tipAmount} total={total} initialState={initialState} />
       </main>
     </Context.Provider>
   );

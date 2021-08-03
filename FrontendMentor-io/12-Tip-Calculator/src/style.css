@@ -39,7 +39,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+#root {
+  width:100%;
+  overflow-x: hidden;
+}
+form {
+  width: 50%;
+}
 input {
   font-size:var(--fs-inputs);
   outline: none;
@@ -67,21 +73,25 @@ input {
 /*STYLE RADIO INPUTS LIKE BUTTONS*/
 
 .radio-input {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .radio-input input[type=radio]{
   display: none;
 }
 
-.radio-input label {
+.radio-input label
+{
   font-size:var(--fs-inputs);
+  width: 100%;
   font-weight: var(--fw-bold);
   display: inline-block;
 	cursor: pointer;
-	padding: 0px 15px;
+  text-align: center;
 	line-height: 34px;
-	border-right: none;
+  border-radius: 5px;
 	user-select: none;
   background-color: var(--dark-green);
   color: var(--white);
@@ -89,18 +99,27 @@ input {
   transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.custom-input{
+  font-family: 'Space Mono', monospace;
+  font-weight: var(--fw-bold);
+  display: inline-block;
+width: 100%;
+  border-radius: 5px;
+}
+.custom-input:focus {
+  color: var(--dark-green);
+}
+
 .radio-input labe:active{
   transform: scale(0.98);
 }
-.radio-input:first-child label {
-	border-radius: 6px 0 0 6px;
-}
 
-.radio-input:last-child label {
-	border-radius: 0 6px 6px 0;
-	border-right: 1px solid #999;
+.radio-container{
+  margin: 1em 0;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 10px;
 }
-
 
 /* Checked */
 .radio-input .input-selected {
@@ -131,9 +150,30 @@ input:focus{
     outline : 2px solid var(--clr-primary);
 }
 
+.icon-wrapper {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 40%;
+  bottom:0;
+  left: 10px;
+  z-index: 2;
+}
+
+.input-grey {
+  width:100%;
+  text-align: right;
+  background-color: var(--light-grayish-cyan);
+  font-family: 'Space Mono', monospace;
+  font-weight: var(--fw-bold);
+  color: var(--dark-green);
+}
+
 .calculator {
   margin: 0 auto;
   width: 90%;
+  max-width: 900px;
   background-color: var(--white);
   border-radius: 1em;
   display: flex;
@@ -141,8 +181,10 @@ input:focus{
   padding: 2em;
 }
 
+
 .results {
-  width: 90%;
+  margin-left: 1em;
+  width: 50%;
   background-color: var(--dark-green);
   border-radius: 25px;
   padding: 2em 1em;
@@ -153,7 +195,8 @@ input:focus{
 }
 
 .result-value{
-  width: 100%;
+  width: 90%;
+  margin: 1em 0;
   display:grid;
   font-weight: var(--fw-bold);
   font-size: 1.2rem;
@@ -176,6 +219,7 @@ input:focus{
   color: var(--clr-primary);
   font-size: var(--fs-inputs);
   grid-area: value;
+  margin-left: auto;
 }
 
 .btn-reset {
@@ -195,3 +239,54 @@ padding: 10px 0;
 .btn-reset:hover{
   background-color: var(--light-grayish-cyan);
 }
+
+
+ .hide-element {
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; 
+}
+
+@media (max-width: 600px){
+  .calculator{
+flex-direction: column;
+  }
+  form {
+    width: 100%;
+  }
+
+  .radio-container {
+grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+  }
+
+  .results {
+    margin: 0;
+    margin-top:2em;
+    width: 100%;
+  }
+  .custom-input {
+    font-size: 16px;
+  }
+}
+.error-text {
+  display: inline;
+  color: firebrick;
+  margin-left: 25%;
+}
+
+.error-input{
+  border: 2px solid firebrick;
+}
+
+.error-input:focus{
+outline: none;
+  border: 2px solid firebrick;
+}
+
+
